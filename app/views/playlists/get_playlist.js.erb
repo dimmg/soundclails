@@ -1,0 +1,56 @@
+const EMPTY_LIST = '[]';
+const WIDGET_TYPES = {
+  playlist: 'playlist',
+  track: 'track'
+}
+
+clip = new RegExp(/[\(\[]clip[\)\]]/gi)
+out_now = new RegExp(/[\(\[]out now[\)\]]/gi)
+
+TRACK_NAME_IGNORED_COMBINATIONS = [
+  clip, out_now
+]
+
+function getPlaylist() {
+  tracks = '<%= @tracks %>';
+  playlist = '<%= @playlist %>';
+
+  if (tracks == '[]') {
+    $('#tracks').html('No downloadable tracks were found');
+    return;
+  }
+
+  if (tracks) {
+    tracks = '<%= @tracks.map {|track| track['uri']} if @tracks %>';
+    track_titles = '<%= @tracks.map {|track| track['title'] || 'unknown'} if @tracks %>';
+    tracks_usernames = '<%= @tracks.map {|track| track['user']['username'] || ''} if @tracks %>';
+
+    tracks = JSON.parse(tracks.replace(/&quot;/g, '"'));
+    track_titles = JSON.parse(track_titles.replace(/&quot;/g, '"'));
+    tracks_usernames = JSON.parse(tracks_usernames.replace(/&quot;/g, '"'));
+
+
+    $('#tracks').html('');
+    for (var i = 0; i < tracks.length; i++) {
+      $('#tracks').append(showWidget(tracks[i], 'track')).append(addTrackTitle(tracks_usernames[i], track_titles[i]));
+    }
+  } else if (playlist) {
+    $('#tracks').html(showWidget(playlist, 'playlist'));
+  }
+};
+
+function addTrackTitle(username, title) {
+  TRACK_NAME_IGNORED_COMBINATIONS.forEach(function(combination) {
+    title = title.replace(combination, "").trim();
+  });
+  if (title.match(/ - /)) {
+    return "<p class=\"track-title\">" + title + "</p>";
+  } else {
+    return "<p class=\"track-title\">" + username + " - " + title + "</p>";
+  }
+
+}
+
+
+getPlaylist();
+$('#paginator').html('<%= j render partial: 'paginator', locals: {tracks: @tracks } if @tracks %>')
