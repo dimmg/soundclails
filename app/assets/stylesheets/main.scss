@@ -34,16 +34,16 @@
 }
 
 .content-wrapper h1 {
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    font-size: 50px;
-    font-weight: 700;
+  color: white;
+  font-family: $raleway;
+  font-size: 50px;
+  font-weight: 700;
 }
 
 .content-wrapper p {
     max-width: 75%;
     color: white;
-    font-family: 'Raleway', sans-serif;
+    font-family: $raleway;
     font-size: 20px;
     font-weight: 400;
     margin-top: 20px;
@@ -56,7 +56,7 @@
 
 .content-container h1{
     color: white;
-    font-family: 'Raleway', sans-serif;
+    font-family: $raleway;
     font-size: 50px;
     font-weight: 700;
     display: inline-flex;
@@ -79,7 +79,7 @@
     border: none;
     border-radius: 0;
     padding: 0 30px;
-    font-family: 'Raleway', sans-serif;
+    font-family: $raleway;
 
 }
 
@@ -90,7 +90,7 @@ background: transparent;
     border: none;
     border-radius: 0;
     padding: 0 30px;
-    font-family: 'Raleway', sans-serif;
+    font-family: $raleway;
 }
 
 .over-image {
@@ -104,7 +104,7 @@ h1 span {
 }
 
 h4 {
-    font-family: 'Raleway', sans-serif;
+    font-family: $raleway;
     font-weight: 500;
 }
 
