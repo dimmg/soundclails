@@ -1,0 +1,38 @@
+html,
+body {
+  background: #f8f8f8;
+  color: #000;
+  font-size: 16px;
+  font-family: $raleway;
+  font-weight: 300;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  list-style: none;
+}
+
+a, span, ul, input, p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input, textarea, select {
+  border: none;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+// h1 {
+//   font-size: rem(32);
+// }

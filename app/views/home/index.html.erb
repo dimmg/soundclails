@@ -1,24 +1,26 @@
-<div class="wrapper main-image">
-    <div class='img-responsive' style="background-image:url(https://images.unsplash.com/photo-1473968217939-ab9d99b2eacb?dpr=1&auto=format&fit=crop&w=1500&h=1100&q=80&cs=tinysrgb&crop=)">
+<section class= "cover--wrapper">
+  <div class= "cover--content">
+    <p class= "normal--text">
+      Dedicated to search, catalog, sort free music from Soundcloud for commercial purposes, destined to content creators.
+    </p>
+    <%= form_for :playlist, url: set_playlist_path do |f| %>
+      <%= f.text_field :id, placeholder: 'PLAYLIST LINK / ID', class: "form--control" %>
+      <br>
+      <%= f.submit 'Start searching', class: "btn btn-default" %>
+    <% end %>
+  </div>
+</section>
 
-    </div>
-    <div class='over-image'></div>
+Something will be here
+something
+
+<br>
+<br>
+
+here
+
+here
 
 
-    <div class='content-wrapper'>
-        <div class='container '>
-            <div class='content-container '>
-                <h1>| <span>Sound</span>Cube</h1>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-                <%= form_for :playlist, url: set_playlist_path do |f| %>
-                    <%= f.text_field :id, placeholder: 'PLAYLIST LINK / ID', class: "form-control" %>
-                    <br>
-                    <%= f.submit 'SUBMIT', class: "btn btn-default" %>
-                <% end %>
-            </div>
-        </div>
-    </div>
-
-</div>
+er
 

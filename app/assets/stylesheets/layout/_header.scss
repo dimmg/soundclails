@@ -1,0 +1,14 @@
+header {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+  height: 70px;
+  //right: 0;
+  //left: 0;
+  //position: fixed;
+
+  a {
+  	margin: 0 rem(30);
+  	color: #000;
+  }
+}

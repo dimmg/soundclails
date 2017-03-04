@@ -1,0 +1,24 @@
+.cover--wrapper {
+	min-height: calc(100vh - 70px);
+	overflow: hidden;
+  @include flexbox;
+  @include align-items(center);
+  width: 100%;
+}
+
+.cover--content {
+	@include padding--mixin(rem(25));
+	text-align: center;
+}
+
+@include mq('phablet', min) {
+	.cover--content {
+		@include padding--mixin(rem(50));
+	}
+}
+
+@include mq('tablet-wide', min) {
+	.cover--content {
+		@include padding--mixin(rem(75));
+	}
+}

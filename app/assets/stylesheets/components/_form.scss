@@ -1,0 +1,39 @@
+form {
+	@include flexbox;
+	@include justify-content(center);
+	@include flex-wrap(wrap);
+  margin-top:50px;
+
+  @include transition(all 2s);
+  opacity: 0;
+}
+
+input[type="text"] {
+	padding: 0 25px;
+	display: block;
+  border: 1px solid #d8e4e7;
+  width: 100%;
+  background-color: hsla(0,0%,100%,.95);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 4px 10px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 4px 10px rgba(0,0,0,.05);
+  @include transition(all 0.3s);
+
+  height: 50px;
+}
+
+@include mq('tablet', min) {
+	input[type="text"] {
+		width: 400px;
+  	margin-right: 25px;
+	}
+}
+
+@include mq('desktop', min) {
+	input[type="text"] {
+		width: 600px;
+	}
+}

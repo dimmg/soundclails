@@ -68,5 +68,16 @@ $(document).on('turbolinks:load', function() {
         }
     });
     });
+
+    coverContent = $('.cover--content');
+    paragraph = coverContent.find('.normal--text');
+    form = coverContent.find('form');
+
+    paragraph.css({'opacity':'1', 'transform':'translateY(0)'});
+    setTimeout(
+      function() 
+      {
+        form.css({'opacity':'1'});
+      }, 500);
   }
 );

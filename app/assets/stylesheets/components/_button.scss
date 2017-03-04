@@ -1,0 +1,25 @@
+.btn {
+  font-size: 18px;
+  font-family: 'FuturaBT-Book', sans-serif;
+  font-weight: 300;
+  background-color: #ffb21a;
+  color: #ffffff;
+  @include padding--mixin($left: rem(20), $right: rem(20));
+  height: 50px;
+  border-radius: 52px;
+  text-decoration: none;
+  -webkit-transition: background 80ms linear, opacity 1s linear;
+  transition: background 80ms linear, opacity 1s linear;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-top: 25px;
+  &:hover {
+  	background-color: #faa600;
+  }
+}
+
+@include mq('tablet', min) {
+	.btn {
+		margin-top: 0;
+	}
+}

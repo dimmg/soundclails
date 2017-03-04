@@ -1,0 +1,22 @@
+.content--wrapper {
+	max-width: $maxWidth;
+	margin: 0 auto;
+  background-color: #fff;
+}
+
+.normal--text {
+	font-size: em(20,16);
+  line-height: 40px;
+
+	@include transition(all 2s);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+
+@include mq('phone', min) {
+	.normal--text {
+		font-size: em(40, 16);
+	  line-height: 60px;
+	}
+}
