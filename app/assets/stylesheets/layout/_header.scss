@@ -7,8 +7,14 @@ header {
   //left: 0;
   //position: fixed;
 
+
   a {
   	margin: 0 rem(30);
   	color: #000;
+  	transition: color .3s ease 0s;
+
+  	&:hover {
+  		color: $mainColor;
+  	}
   }
 }

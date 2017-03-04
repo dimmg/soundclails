@@ -1,5 +1,5 @@
 .button{
-  color:#faa600;
+  color: $mainColor;
   font-size: em(18,16);
   font-weight: 300;
   text-decoration:none; 
@@ -7,18 +7,18 @@
   cursor: pointer;
   margin-top: rem(25);
   background-color: transparent;
-  border:1px solid #faa600;
+  border:1px solid  $mainColor;
   border-radius: 52px;
   height: 50px;
   @include padding--mixin($left: rem(20), $right: rem(20));
   background-size: 202% 100%; 
-  background-image: linear-gradient(to right, transparent 50%, #ffb21a 50%);
+  background-image: linear-gradient(to right, transparent 50%, $orangePale 50%);
   transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
 }
 
 .button:hover{
   color:rgba(255, 255, 255, 1);
-  background-color: #faa600;
+  background-color:  $mainColor;
   background-position: -99% 100%;
 }
 
