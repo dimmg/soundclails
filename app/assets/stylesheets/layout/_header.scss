@@ -6,10 +6,9 @@ header {
   //right: 0;
   //left: 0;
   //position: fixed;
-
+  margin: 0 rem(30);
 
   a {
-  	margin: 0 rem(30);
   	color: $mainColor;
   	transition: color .3s ease 0s;
     font-size: em(17,16);
