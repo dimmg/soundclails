@@ -15,7 +15,7 @@ header {
     font-weight: 500;
 
   	&:hover {
-  		color: #000;
+  	  color: #000;
   	}
 
     &.active {
@@ -23,7 +23,7 @@ header {
     }
   }
 
-  .innactive {
+  .inactive {
     text-decoration: line-through;
   }
 }

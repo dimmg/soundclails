@@ -18,7 +18,6 @@
   }
 }
 
-
 @include mq('phone', min) {
 	.normal--text {
 		font-size: em(40, 16);
