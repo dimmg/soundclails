@@ -10,11 +10,21 @@ header {
 
   a {
   	margin: 0 rem(30);
-  	color: #000;
+  	color: $mainColor;
   	transition: color .3s ease 0s;
+    font-size: em(17,16);
+    font-weight: 500;
 
   	&:hover {
-  		color: $mainColor;
+  		color: #000;
   	}
+
+    &.active {
+      color: #000;
+    }
+  }
+
+  .innactive {
+    text-decoration: line-through;
   }
 }

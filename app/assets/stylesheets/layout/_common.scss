@@ -11,6 +11,11 @@
 	@include transition(all 2s);
   opacity: 0;
   transform: translateY(30px);
+
+  span {
+  	font-weight: 500;
+  	font-size: em(22, 20);
+  }
 }
 
 
@@ -18,5 +23,9 @@
 	.normal--text {
 		font-size: em(40, 16);
 	  line-height: 60px;
+
+	 span {
+	 	font-size: em(44, 40);
+	 }
 	}
 }
