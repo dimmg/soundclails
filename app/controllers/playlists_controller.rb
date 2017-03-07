@@ -94,7 +94,7 @@ class PlaylistsController < ApplicationController
       playlist_uri, tracks = nil, nil
     end
 
-    tracks = Kaminari.paginate_array(tracks).page(params[:page]).per(5)
+    tracks = Kaminari.paginate_array(tracks).page(params[:page]).per(10)
 
     return playlist_uri, tracks
   end
