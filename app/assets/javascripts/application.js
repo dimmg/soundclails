@@ -59,7 +59,7 @@ $(document).on('turbolinks:load', function() {
       filterEvent(filter);
     });
 
-    $(document).on('click', '.track-title', function() {
+    $(document).on('click', '.track--title', function() {
       $.ajax({
         url: '/get-youtube-meta',
         method: 'GET',
@@ -79,5 +79,27 @@ $(document).on('turbolinks:load', function() {
       {
         form.css({'opacity':'1'});
       }, 500);
+
+    tracks = $('.track--container');
+    trackButton = tracks.find('.track--button');
+    trackModal = $('.track--modal');
+
+    // showing modal and specific iframe
+    $(document).on('click', '.track--button', function() {
+     trackModal.css({'opacity':'1', 'height':'100%'})
+     $(this).siblings( ".track--iframe" ).css({"opacity":"1", 'width':'70%'});
+    });
+
+    $(document).on('click', '.track--modal', function() {
+
+      //select all trackIframe
+      trackIframe = $('.track--iframe');
+
+      // hide modal and alliframes
+      trackIframe.css({'opacity':'0', 'width':'10%'});
+      trackModal.css({'opacity':'0', 'height':'0'});
+    });
   }
 );
+
+
