@@ -18,6 +18,9 @@
   }
 }
 
+.main--wrapper {
+  min-height: calc(100vh - 70px);
+}
 @include mq('phone', min) {
 	.normal--text {
 		font-size: em(40, 16);

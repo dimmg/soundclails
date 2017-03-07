@@ -24,16 +24,20 @@ function getPlaylist() {
     tracks = '<%= @tracks.map {|track| track['uri']} if @tracks %>';
     track_titles = '<%= @tracks.map {|track| track['title'] || 'unknown'} if @tracks %>';
     tracks_usernames = '<%= @tracks.map {|track| track['user']['username'] || ''} if @tracks %>';
+    tracks_art = '<%= @tracks.map {|track| track['artwork_url'] || ''} if @tracks %>';
 
     tracks = JSON.parse(tracks.replace(/&quot;/g, '"'));
     track_titles = JSON.parse(track_titles.replace(/&quot;/g, '"'));
     tracks_usernames = JSON.parse(tracks_usernames.replace(/&quot;/g, '"'));
-
-
+    tracks_art = JSON.parse(tracks_art.replace(/&quot;/g, '"'));
+    
     $('#tracks').html('');
     for (var i = 0; i < tracks.length; i++) {
-      $('#tracks').append(showWidget(tracks[i], 'track')).append(addTrackTitle(tracks_usernames[i], track_titles[i]));
+      className = "track--container box--" + i;
+      $('#tracks').append($('<div>', {class: className}));
+      $('.box--' + i).append(addTrackArt(tracks_art[i])).append(addTrackTitle(tracks_usernames[i], track_titles[i])).append("<div class=\"track--button button\">Show</div>").append(showWidget(tracks[i], 'track'));
     }
+
   } else if (playlist) {
     $('#tracks').html(showWidget(playlist, 'playlist'));
   }
@@ -44,13 +48,22 @@ function addTrackTitle(username, title) {
     title = title.replace(combination, "").trim();
   });
   if (title.match(/ - /)) {
-    return "<p class=\"track-title\">" + title + "</p>";
+    return "<h5 class=\"track--title\">" + title + "</h5>";
   } else {
-    return "<p class=\"track-title\">" + username + " - " + title + "</p>";
+    return "<h5 class=\"track--title\">" + username + " - " + title + "</h5>";
   }
-
 }
 
+function addTrackArt(artUrl) {
+  if(artUrl){
+    artUrl = artUrl.replace('-large', '-t500x500');
+    return "<img class=\"track--art\" style=\"background-image: url(\'"+ artUrl + "\')\">"; 
+  }
+
+  else {
+    return "<p> artwork not found </p>";
+  }
+}
 
 getPlaylist();
 $('#paginator').html('<%= j render partial: 'paginator', locals: {tracks: @tracks } if @tracks %>')
