@@ -84,22 +84,24 @@ $(document).on('turbolinks:load', function() {
     trackButton = tracks.find('.track--button');
     trackModal = $('.track--modal');
 
-    // showing modal and specific iframe
+    // Show modal
     $(document).on('click', '.track--button', function() {
-     trackModal.css({'opacity':'1', 'height':'100%'})
-     $(this).siblings( ".track--iframe" ).css({"opacity":"1", 'width':'70%'});
+     $(this).siblings( ".track--iframe" ).css({"opacity":"1", 'height':'160px', 'padding':'2% 5%'});
+     trackModal.css({"clip-path":"circle(200% at "+event.pageX+"px " +event.pageY +"px"+")"})
     });
 
-    $(document).on('click', '.track--modal', function() {
+    // Close modal
+    $(document).on('click', '.close--modal', function() {
 
-      //select all trackIframe
+      // Select all trackIframe
       trackIframe = $('.track--iframe');
 
-      // hide modal and alliframes
-      trackIframe.css({'opacity':'0', 'width':'10%'});
-      trackModal.css({'opacity':'0', 'height':'0'});
+      // Hide modal and iframes
+      trackIframe.css({'opacity':'0', 'height':'0', 'padding':'0'});
+      trackModal.css({"clip-path":"circle(0% at "+event.pageX+"px " +event.pageY +"px"+")"})
     });
   }
 );
+
 
 
