@@ -1,0 +1,55 @@
+.filters--section {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.filters--wrapper {
+  margin: rem(30) 0;
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+}
+
+.switch-container {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+  margin: rem(15) 0;
+}
+
+.filter--art {
+  @include transition(0.3s ease-in 0s);
+  width: 25px;
+  height: 25px;
+  fill: #717171;
+
+  &.active {
+    transform: scale(1.2) !important;
+    fill: #343434;
+  }
+}
+
+h4 {
+  opacity: 0;
+  @include transition(0.1s ease-in 0s);
+}
+
+.active + h4 {
+  opacity: 1;
+}
+
+#asc_views,
+#asc_likes {
+  svg {
+    transform: scale(-1);
+  }
+}
+
+@include mq('tablet', min) {
+  .filters--section {
+    width: 60%;
+  }
+}

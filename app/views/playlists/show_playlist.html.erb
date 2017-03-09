@@ -1,54 +1,38 @@
 <div class='track--modal'>Modal animation is in /BETA/</div>
 <div class='main--wrapper'>
-  <section class='filters-wrapper'>
-    <div class='switch-container'>
-      <h4>Downloadable</h4>
-      <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="downloadable">
-        <label class="onoffswitch-label" for="downloadable">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-        </label>
+  <section class="filters--section">
+    <h2 class='fiter--header'>Click to apply filters</h2>
+    <div class='filters--wrapper'>
+      <div class='switch-container'>
+        <div class='filter--art' id="downloadable">
+          <%= render 'layouts/downloadable_icon' %>
+        </div>
+        <h4>Downloadable</h4>
       </div>
-    </div>
-    <div class='switch-container'>
-      <h4>Less Viewed</h4>
-      <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="asc_views">
-        <label class="onoffswitch-label" for="asc_views">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-        </label>
+      <div class='switch-container'>
+        <div class='filter--art' id="asc_views">
+          <%= render 'layouts/views_icon' %>
+        </div>
+        <h4 >Less Viewed</h4>
       </div>
-    </div>
-    <div class='switch-container'>
-      <h4>Most Viewed</h4>
-      <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="desc_views">
-        <label class="onoffswitch-label" for="desc_views">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-        </label>
+      <div class='switch-container'>
+        <div class='filter--art' id="desc_views">
+           <%= render 'layouts/views_icon' %>
+        </div>
+        <h4  >Most Viewed</h4>
       </div>
-    </div>
-    <div class='switch-container'>
-      <h4>Less Likes</h4>
-      <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="asc_likes">
-        <label class="onoffswitch-label" for="asc_likes">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-        </label>
+      <div class='switch-container'>
+        <div class='filter--art' id="asc_likes">
+           <%= render 'layouts/hand_icon' %>
+        </div>
+        <h4  >Less Likes</h4>
       </div>
-    </div>
-    <div class='switch-container'>
-      <h4>Most Liked</h4>
-      <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="desc_likes">
-        <label class="onoffswitch-label" for="desc_likes">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-        </label>
+      <div class='switch-container'>
+        <div class='filter--art' id="desc_likes">
+          <%= render 'layouts/hand_icon' %>
+        </div>
+        <h4  >Most Liked</h4>
+
       </div>
     </div>
   </section>
