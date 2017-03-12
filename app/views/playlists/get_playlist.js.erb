@@ -64,6 +64,20 @@ function addTrackArt(artUrl) {
     return "<p> artwork not found </p>";
   }
 }
-
 getPlaylist();
+
+// Show loader while iframe is DOMready
+$(document).ready(function() {
+  let iframe = $("iframe");
+  
+  if(iframe.length < 1) {
+    $("#loader").hide();
+    return;
+  }
+
+  iframe.on('load', function(){
+       $("#loader").hide();
+  });
+});
+
 $('#paginator').html('<%= j render partial: 'paginator', locals: {tracks: @tracks } if @tracks %>')
