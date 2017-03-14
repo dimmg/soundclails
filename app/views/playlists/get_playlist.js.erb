@@ -68,7 +68,7 @@ getPlaylist();
 
 // Show loader while iframe is DOMready
 $(document).ready(function() {
-  let iframe = $("iframe");
+  var iframe = $("iframe");
   
   if(iframe.length < 1) {
     $("#loader").hide();
