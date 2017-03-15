@@ -48,7 +48,12 @@ class PlaylistsController < ApplicationController
     if playlist_id.to_i > 0
       unless $redis.get(playlist_id)
         logger.info "REDIS:: Fetching #{playlist_id}"
-        playlist = client.get("/playlists/#{playlist_id}")
+
+        begin
+          playlist = client.get("/playlists/#{playlist_id}")
+        rescue SoundCloud::ResponseError => e
+          return nil, nil
+        end
 
         normalize_track_titles(playlist.tracks)
 
@@ -58,7 +63,12 @@ class PlaylistsController < ApplicationController
     else
       unless $redis.get(playlist_id)
         logger.info "REDIS:: Fetching #{playlist_id}"
-        playlist = client.get('/resolve', url: playlist_id)
+
+        begin
+          playlist = client.get('/resolve', url: playlist_id)
+        rescue SoundCloud::ResponseError => e
+          return nil, nil
+        end
 
         normalize_track_titles(playlist.tracks)
 

@@ -30,16 +30,17 @@ function getPlaylist() {
     track_titles = JSON.parse(track_titles.replace(/&quot;/g, '"'));
     tracks_usernames = JSON.parse(tracks_usernames.replace(/&quot;/g, '"'));
     tracks_art = JSON.parse(tracks_art.replace(/&quot;/g, '"'));
-    
+
     $('#tracks').html('');
     for (var i = 0; i < tracks.length; i++) {
       className = "track--container box--" + i;
       $('#tracks').append($('<div>', {class: className}));
       $('.box--' + i).append(addTrackArt(tracks_art[i])).append(addTrackTitle(tracks_usernames[i], track_titles[i])).append("<div class=\"track--button button\">Show</div>").append(showWidget(tracks[i], 'track'));
     }
-
   } else if (playlist) {
     $('#tracks').html(showWidget(playlist, 'playlist'));
+  } else if (!playlist) {
+    $('#tracks').html('Invalid playlist specified.');
   }
 };
 
@@ -57,7 +58,7 @@ function addTrackTitle(username, title) {
 function addTrackArt(artUrl) {
   if(artUrl){
     artUrl = artUrl.replace('-large', '-t500x500');
-    return "<img class=\"track--art\" style=\"background-image: url(\'"+ artUrl + "\')\">"; 
+    return "<img class=\"track--art\" style=\"background-image: url(\'"+ artUrl + "\')\">";
   }
 
   else {
@@ -69,7 +70,7 @@ getPlaylist();
 // Show loader while iframe is DOMready
 $(document).ready(function() {
   var iframe = $("iframe");
-  
+
   if(iframe.length < 1) {
     $("#loader").hide();
     return;
