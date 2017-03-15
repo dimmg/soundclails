@@ -1,0 +1,27 @@
+#paginator {
+  @include margin--mixin($top: rem(50));
+}
+.pagination {
+  @include flexbox;
+  @include justify-content(center);
+  
+  .page{
+    @include margin--mixin($left: rem(10), $right: rem(10));
+  }
+  a,
+  span {
+    font-size: 18px;
+    color: #717171;
+
+  }
+
+  .current {
+    color: $mainColor;
+  }
+
+  a {
+    &:hover {
+      color: $mainColor;
+    }
+  }
+}
