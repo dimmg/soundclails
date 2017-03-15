@@ -8,12 +8,13 @@
   margin-top: rem(25);
   background-color: transparent;
   border:1px solid  $mainColor;
-  border-radius: 52px;
+  border-radius: 5px;
   height: 50px;
   @include padding--mixin($left: rem(20), $right: rem(20));
   background-size: 202% 100%; 
   background-image: linear-gradient(to right, transparent 50%, $orangePale 50%);
   transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
+  text-transform: lowercase;
 }
 
 .button:hover{
