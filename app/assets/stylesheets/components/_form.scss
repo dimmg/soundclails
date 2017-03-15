@@ -21,6 +21,7 @@ input[type="text"] {
   -webkit-box-shadow: 0 4px 10px rgba(0,0,0,.05);
   -moz-box-shadow: 0 4px 10px rgba(0,0,0,.05);
   @include transition(all 0.3s);
+  text-transform: lowercase;
 
   height: 50px;
 }
