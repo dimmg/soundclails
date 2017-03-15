@@ -22,6 +22,7 @@ input[type="text"] {
   -moz-box-shadow: 0 4px 10px rgba(0,0,0,.05);
   @include transition(all 0.3s);
   text-transform: lowercase;
+  font-family: $josefin;
 
   height: 50px;
 }
