@@ -16,7 +16,7 @@ function getPlaylist() {
   playlist = '<%= @playlist %>';
 
   if (tracks == '[]') {
-    $('#tracks').html('No downloadable tracks were found');
+    $('#tracks').html('<h2>No downloadable tracks were found</h2>');
     return;
   }
 
