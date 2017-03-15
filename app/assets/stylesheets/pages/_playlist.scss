@@ -126,14 +126,16 @@
 
 .close--modal {
   font-size: 4em;
-  line-height: 0;
-  padding: rem(20) rem(5);
-  border: 1px solid;
-  border-radius: 50%;
+  line-height: initial;
   display: none;
-  
+  @include transform(rotate(135deg));
+
+  &:after {
+    content: '';
+    position: absolute;
+
+  }
   &:hover {
-    @include transform(rotate(135deg));
     color: $mainColor;
   }
 }
