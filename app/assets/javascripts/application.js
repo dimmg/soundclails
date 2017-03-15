@@ -88,6 +88,7 @@ $(document).on('turbolinks:load', function() {
     $(document).on('click', '.track--button', function() {
      $(this).siblings( ".track--iframe" ).css({"opacity":"1", 'height':'160px', 'padding':'2% 5%'});
      trackModal.css({'display':'flex'});
+     $('.close--modal').show();
     });
 
     // Close modal
@@ -100,6 +101,7 @@ $(document).on('turbolinks:load', function() {
       trackIframe.css({'opacity':'0', 'height':'0', 'padding':'0'});
       trackModal.hide();
       trackModal.html("");
+      $(this).hide();
     });
   }
 );

@@ -15,6 +15,7 @@
   font-weight: 700;
   @include transition( .75s ease-in-out);
   display: none;
+  color: white;
 
   p {
     font-size: 16px;
@@ -25,7 +26,6 @@
     font-size: 24px;
     font-size: em(24, 16);
     opacity: 1;
-    color: white;
     margin-top: 15%;
     margin-bottom: 30px;
   }
@@ -122,20 +122,30 @@
     }
   }
 
-  .close--modal {
-    font-size: 4em;
-    line-height: 0;
-    padding: rem(20) rem(5);
-    border: 1px solid;
-    border-radius: 50%;
-    
-    &:hover {
-      @include transform(rotate(135deg));
-      color: $mainColor;
-    }
+}
+
+.close--modal {
+  font-size: 4em;
+  line-height: 0;
+  padding: rem(20) rem(5);
+  border: 1px solid;
+  border-radius: 50%;
+  display: none;
+  
+  &:hover {
+    @include transform(rotate(135deg));
+    color: $mainColor;
   }
 }
 
+.playlist--iframe {
+  width: 80%;
+  @include push--auto;
+
+  iframe {
+    width: 100%;
+  }
+}
 @include mq ('tablet', min) {
   .track--container {
     width: 30.8333333%;

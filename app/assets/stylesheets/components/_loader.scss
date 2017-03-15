@@ -12,16 +12,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  
 
   svg {
     fill: $mainColor;
     width: 50px;
   }
+
+  color: white;
 }
 
  p {
-    color: white;
     font-family: $josefin;
     font-size: em(32, 16);
     font-weight: 400;
