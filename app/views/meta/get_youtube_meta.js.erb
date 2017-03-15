@@ -1,1 +1,8 @@
-console.log('<%=j @titles %>');
+$("#loader").hide();
+trackModal = $('.track--modal');
+titles = ('<%=j @titles%>');
+trackModal.append('<h4>Youtube search similarities</h4>')
+tracks = JSON.parse(titles.replace(/&quot;/g, '"'));
+tracks.forEach(function(track) {
+    trackModal.append('<p>' + track +'</p>')
+});

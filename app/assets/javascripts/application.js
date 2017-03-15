@@ -59,14 +59,15 @@ $(document).on('turbolinks:load', function() {
       filterEvent(filter);
     });
 
-    $(document).on('click', '.track--title', function() {
+    $(document).on('click', '.track--button', function() {
       $.ajax({
         url: '/get-youtube-meta',
         method: 'GET',
         data: {
-          title: this.innerText
+          title: $(this).siblings( ".track--title" )[0].innerText
         }
     });
+      console.log($(this).siblings( ".track--title" )[0].innerText);
     });
 
     coverContent = $('.cover--content');
@@ -87,7 +88,7 @@ $(document).on('turbolinks:load', function() {
     // Show modal
     $(document).on('click', '.track--button', function() {
      $(this).siblings( ".track--iframe" ).css({"opacity":"1", 'height':'160px', 'padding':'2% 5%'});
-     trackModal.css({"clip-path":"circle(200% at "+event.pageX+"px " +event.pageY +"px"+")"})
+     trackModal.css({'display':'flex'});
     });
 
     // Close modal
@@ -98,7 +99,8 @@ $(document).on('turbolinks:load', function() {
 
       // Hide modal and iframes
       trackIframe.css({'opacity':'0', 'height':'0', 'padding':'0'});
-      trackModal.css({"clip-path":"circle(0% at "+event.pageX+"px " +event.pageY +"px"+")"})
+      trackModal.hide();
+      trackModal.html("");
     });
   }
 );

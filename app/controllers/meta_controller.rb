@@ -3,7 +3,6 @@ class MetaController < ApplicationController
 
   def get_youtube_meta
     @titles = get_titles_for_query(params[:title], 10).to_json
-
     respond_to do |format|
       format.js {}
     end

@@ -18,13 +18,9 @@
     fill: $mainColor;
     width: 50px;
   }
-  // svg path,
-  // svg rect{
-    
-  //   // fill: #FF6700;
-  // }
+}
 
-  p {
+ p {
     color: white;
     font-family: $josefin;
     font-size: em(32, 16);
@@ -32,4 +28,3 @@
     text-align: center;
     margin: 2% 0;
   }
-}
