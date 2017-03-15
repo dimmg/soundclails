@@ -18,6 +18,18 @@
   @include justify-content(center);
   @include align-items(center);
   margin: rem(15) 0;
+
+  &:hover {
+    cursor: pointer;
+
+    .filter--art {
+      transform: scale(1.2) !important;
+    }
+
+    h4 {
+      opacity: 1;
+    }
+  }
 }
 
 .filter--art {
@@ -26,9 +38,6 @@
   height: 25px;
   fill: #717171;
 
-  &:hover {
-    cursor: pointer;
-  }
   &.active {
     transform: scale(1.2) !important;
     fill: $mainColor;
