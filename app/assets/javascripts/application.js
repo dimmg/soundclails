@@ -67,8 +67,7 @@ $(document).on('turbolinks:load', function() {
           title: $(this).siblings( ".track--title" )[0].innerText
         }
     });
-      console.log($(this).siblings( ".track--title" )[0].innerText);
-    });
+});
 
     coverContent = $('.cover--content');
     paragraph = coverContent.find('.normal--text');
