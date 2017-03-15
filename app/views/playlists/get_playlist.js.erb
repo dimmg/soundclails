@@ -40,7 +40,8 @@ function getPlaylist() {
   } else if (playlist) {
     $('#tracks').html(showWidget(playlist, 'playlist'));
   } else if (!playlist) {
-    $('#tracks').html('Invalid playlist specified.');
+    $('#tracks').html('<h2>Invalid playlist specified.</h2>');
+    $('.filters--section').html('');
   }
 };
 
