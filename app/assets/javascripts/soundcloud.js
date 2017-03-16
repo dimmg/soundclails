@@ -8,7 +8,7 @@ function showWidget(uri, type) {
 
     return "\<div class=\""+type+"--iframe"+"\">\
               <iframe id=\"sc-widget\"src=\"https://w.soundcloud.com/player/?url=" + uri +
-              "\"width=\"80%\" height=\""+ height +"\" scrolling=\"no\" frameborder=\"no\">\
+              "\"width=\"90%\" height=\""+ height +"\" scrolling=\"no\" frameborder=\"no\">\
               </iframe>\
               <div class=\"close--modal\">+</div>\
             </div>";
