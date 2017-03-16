@@ -3,9 +3,6 @@ header {
   @include justify-content(space-between);
   @include align-items(center);
   height: 70px;
-  //right: 0;
-  //left: 0;
-  //position: fixed;
   margin: 0 rem(30);
 
   a {
@@ -13,6 +10,7 @@ header {
   	transition: color .3s ease 0s;
     font-size: em(17,16);
     font-weight: 500;
+    text-decoration: line-through;
 
   	&:hover {
   	  color: #000;
@@ -20,10 +18,7 @@ header {
 
     &.active {
       color: #000;
+      text-decoration: none;
     }
-  }
-
-  .inactive {
-    text-decoration: line-through;
   }
 }

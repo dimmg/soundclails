@@ -1,0 +1,15 @@
+<canvas id="canvasElement">
+  <p>Your browser doesn't support canvas.</p>
+</canvas>
+<section class= 'cover--wrapper'>
+  <div class= 'cover--content'>
+    <p class= 'normal--text'>
+      Pass through a <span>SoundCloud</span> playlist and get the most out of it
+    </p>
+    <%= form_for :playlist, url: set_playlist_path do |f| %>
+      <%= f.text_field :id, placeholder: 'PLAYLIST LINK / ID', class: "form--control" %>
+      <br>
+      <%= f.submit 'Start searching', class: "button" %>
+    <% end %>
+  </div>
+</section>
