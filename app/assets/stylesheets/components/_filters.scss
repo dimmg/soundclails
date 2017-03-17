@@ -36,7 +36,7 @@
   @include transition(0.3s ease-in 0s);
   width: 25px;
   height: 25px;
-  fill: #717171;
+  fill: $greyColor;
 
   &.active {
     transform: scale(1.2) !important;
