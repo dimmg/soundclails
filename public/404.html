@@ -16,12 +16,23 @@
   div.dialog {
     width: 100vw;
     height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
     justify-content: space-between;
     
   }
 
   div.dialog > div {
+    -webkit-align-self: flex-end;
+    -moz-align-self: flex-end;
+    -ms-flex-item-align: end;
     align-self: flex-end;
     text-align: left;
     margin: 0 0 10% 10%;
@@ -50,6 +61,9 @@
 
   svg {
     width: 30%;
+    -webkit-align-self: flex-start;
+    -moz-align-self: flex-start;
+    -ms-flex-item-align: start;
     align-self: flex-start;
     margin: 10% 10% 0 0;
     fill: #faa600;
@@ -65,13 +79,14 @@
   }
 }
 
-svg {
+svg:hover{
    animation-name: scale;
- animation-duration: 4s; /* or: Xms */
- animation-iteration-count: 10;
- animation-direction: alternate; /* or: normal */
- animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
- animation-fill-mode: forwards; /* or: backwards, both, none */
+   animation-duration: 1s; /* or: Xms */
+   animation-iteration-count: 10;
+   animation-direction: alternate; /* or: normal */
+   animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+   animation-fill-mode: forwards; /* or: backwards, both, none */
+ }
 }
   
   </style>
@@ -82,7 +97,7 @@ svg {
   <div class="dialog">
     <div>
       <h2>page not found.</h1>
-      <a onclick="javascript:goToHomePage()" href="javascript:void(0)">return home</a>
+      <a onclick="javascript:goToHomePage()" href="javascript:void(0)">home</a>
     </div>
   
 
