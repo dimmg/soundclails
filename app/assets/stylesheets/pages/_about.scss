@@ -1,0 +1,78 @@
+.visible {
+  opacity: 1;
+}
+#developers {
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+}
+
+.developer--container {
+  width: 47.5%;
+  height: 190px;
+  margin: rem(30) 1.25%;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.10);
+  -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.10);
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.10);
+  position: relative;
+  border-radius: 5px;
+
+  @include transition( .3s ease-in-out);
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  overflow: hidden;
+
+  .developer--art {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 10%;
+    width: 80%;
+    height: 70%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+
+  .developer--title {
+    font-family: $josefin;
+    font-size: em(12, 16);
+    font-weight: 400;
+    color: black;
+    text-align: center;
+    margin: 0 10%;
+  }
+
+  .developer--title, 
+  .developer--art{
+    @include transition( .5s ease-in-out);
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .developer--art {
+      @include transform(scale(0.9));
+    }
+    .developer--title {
+      @include transform(translateY(-20px));
+    }
+  }
+}
+
+@include mq ('tablet', min) {
+  .developer--container {
+    width: 30.8333333%;
+    height: 210px;
+  }
+}
+@include mq ('tablet-wide', min) {
+  .developer--container {
+    width: 17.5%;
+    
+    .developer--iframe {
+      width: 70%;
+    }
+  }
+}
