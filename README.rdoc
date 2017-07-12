@@ -1,28 +1,9 @@
-== README
+## Soundclails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The intent of the project was to play around with Soundcloud and Youtube APIs.
 
-Things you may want to cover:
+The final result is an analyzer of the provided Soundcloud playlist, that supports filters like: downloadable, less/most liked, less/most viewed.
+Youtube API was used to show top 10 results on Youtube for a specific song title.
 
-* Ruby version
+Live example and instructions on how to use it, can be found [here](https://soundclails.herokuapp.com/).
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
