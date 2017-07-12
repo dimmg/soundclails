@@ -1,6 +1,6 @@
 module SoundcloudWrapper
   def init_soundcloud_client
-    SoundCloud.new(client_id: '2a9bfd603ea1cbd9095e6539eee69e61')
+    SoundCloud.new(client_id: '2t9loNQH90kzJcsFCODdigxfp325aq4z')
   end
 
   def downloadable(tracks)
